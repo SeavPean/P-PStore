@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&P Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-grey-60 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <!-- <a href="#home" class="flex items-center"> -->
+                        <!-- <img src="/logo.PNG" alt="P&P Store Logo" class="h-20 w-20"> -->
+                        <span class="text-2xl font-bold text-gray-800">P&P Store</span>
+                    <!-- </a> -->
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="font-semibold text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                    <a href="#products" class="font-semibold text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Products</a>
+                    <a href="#new-arrivals" class="font-semibold text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">New Arrivals</a>
+                    <a href="#about" class="font-semibold text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                    <a href="#cart" class="font-semibold text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">
+                        Cart
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </a>
+                    <a href="admin.html" class="text-gray-700 hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Admin</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu-content" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Home</a>
+                <a href="#products" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Products</a>
+                <a href="#new-arrivals" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">New Arrivals</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">About Us</a>
+                <a href="#cart" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Cart</a>
+                <a href="admin.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Home Section -->
+        <section id="home" class="mt-6">
+            <div class="relative w-full h-[500px] overflow-hidden rounded-lg shadow-md">
+                <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-60 text-white p-3 rounded-full text-xl cursor-pointer hover:bg-opacity-80 hover:scale-110 transition-all duration-300" onclick="moveSlide(-1)">❮</button>
+                <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-60 text-white p-3 rounded-full text-xl cursor-pointer hover:bg-opacity-80 hover:scale-110 transition-all duration-300" onclick="moveSlide(1)">❯</button>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section id="new-arrivals" class="py-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">New Arrivals</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">All Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Welcome to our store</h2>
+                <h2 class="text-2xl font-semibold text-gray-600">About P&P Store</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+                    Discover the perfect blend of style and comfort at P&P Store. From everyday essentials to standout pieces, our curated collection of clothing is designed to make you look and feel your best—no matter the occasion. Shop now and elevate your wardrobe with quality fashion that speaks to your unique style!
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex justify-center items-center">
+                        <img src="https://play-lh.googleusercontent.com/bmfBkxHN5t8jHPsUC80nUFS_uYMI7vk_7_Biy56avPZIS8IMuLaoQdDcBHv0SPjbQow=w240-h480-rw" alt="P&P Store Clothing" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="flex flex-col justify-center items-center md:items-start">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600 text-base">
+                            At P&P Store, our mission is simple: to offer top-notch fashion that’s within reach of everyone. From stylish streetwear to chic formal outfits, we’re committed to bringing you quality at unbeatable prices. Join the P&P family and find your new favorite pieces today.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Section -->
+    <div id="cart" class="fixed top-0 right-[-400px] w-[400px] h-full bg-white shadow-2xl transition-all duration-300 z-[1000] overflow-y-auto p-5">
+        <span id="cart-close" class="absolute top-2 right-2 text-2xl cursor-pointer">✖</span>
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Shopping Cart</h2>
+        <div id="cart-items" class="space-y-4"></div>
+        <div class="mt-8 flex justify-between items-center">
+            <div class="text-xl font-semibold">
+                Total: $<span id="cart-total">0.00</span>
+            </div>
+            <button id="checkout-btn" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors disabled:bg-gray-400" disabled>Checkout</button>
+        </div>
+        <a href="#home" class="mt-4 text-blue-600 hover:underline inline-block">Continue Shopping</a>
+    </div>
+
+    <!-- Overlay for closing cart -->
+    <div id="cart-overlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden z-[999]"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">P&P Store</h3>
+                    <p class="text-gray-400">Stay stylish, stay trendy – your fashion journey begins here.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-gray-400 flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <a href="tel:+855964704325" class="hover:text-white">+855 96 470 4325</a>
+                    </p>
+                    <p class="text-gray-400 flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:measrin6672@gmail.com" class="hover:text-white">hengseavpean@gmail.com</a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4"></div>
+                        <a href="https://www.facebook.com/share/18XZu4YM8n/?mibextid=wwXIfr" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                            <i class="fab fa-facebook-f mr-2"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/seav_pean?igsh=ZzFxaWN4dXZqcjg3" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                            <i class="fab fa-instagram mr-2"></i> Instagram
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                            <i class="fab fa-telegram-plane mr-2"></i> Telegram
+                        </a>
+                        <a href="https://www.tiktok.com/@heangsivpean?_t=ZS-8u61QzBh39M&_r=1" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                            <i class="fab fa-tiktok mr-2"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 w-full">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3569.2008732688973!2d104.92542077669097!3d11.534174260354199!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310950d981fe9ee9%3A0xbb8448b9a2f383b2!2s21%20Oknha%20Nhek%20Tioulong%20St.%20(466)%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1740116784024!5m2!1sen!2skh" width="100%" height="180" class="border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">© 2025 P&P Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart storage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Load slides from localStorage
+        let slidesData = JSON.parse(localStorage.getItem('slides')) || [
+          
+        ];
+        const slideshowContainer = document.querySelector('#home .relative');
+        slidesData.forEach((url, index) => {
+            const slide = document.createElement('div');
+            slide.classList.add('absolute', 'w-full', 'h-full', 'bg-cover', 'bg-center', 'opacity-0', 'transition-opacity', 'duration-800', 'ease-in-out');
+            if (index === 0) slide.classList.add('opacity-100');
+            slide.style.backgroundImage = `url('${url}')`;
+            slideshowContainer.insertBefore(slide, slideshowContainer.querySelector('.absolute.left-4'));
+        });
+        const slides = document.querySelectorAll('#home .absolute:not(.left-4):not(.right-4)');
+        const totalSlides = slides.length;
+
+        // Slideshow functionality
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('opacity-100'));
+            slides[index].classList.add('opacity-100');
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(() => moveSlide(1), 5000);
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu-content').classList.toggle('hidden');
+        });
+
+        // Cart Sidebar Toggle
+        const cartSection = document.getElementById('cart');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartClose = document.getElementById('cart-close');
+
+        function toggleCart() {
+            cartSection.classList.toggle('right-0');
+            cartSection.classList.toggle('right-[-400px]');
+            cartOverlay.classList.toggle('hidden');
+            if (!cartSection.classList.contains('right-[-400px]')) {
+                renderCart();
+            }
+        }
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href === 'admin.html') {
+                    window.location.href = href;
+                } else {
+                    const targetId = href.slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetId === 'cart') {
+                        toggleCart();
+                    } else if (targetSection) {
+                        cartSection.classList.add('right-[-400px]');
+                        cartSection.classList.remove('right-0');
+                        cartOverlay.classList.add('hidden');
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        cartOverlay.addEventListener('click', toggleCart);
+        cartClose.addEventListener('click', toggleCart);
+
+        // Load and render products from localStorage
+        function renderProducts(containerId, products) {
+            const container = document.querySelector(`#${containerId} .grid`);
+            container.innerHTML = ''; // Clear previous content
+            console.log(`Rendering ${containerId}:`, products); // Debug log
+            if (!products || products.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500">No products available</p>';
+            } else {
+                products.forEach(product => {
+                    // Ensure price is a number
+                    const price = typeof product.price === 'number' ? product.price : parseFloat(product.price || 0);
+                    const card = document.createElement('div');
+                    card.classList.add('bg-white', 'shadow-md', 'rounded-lg', 'overflow-hidden', 'transition-all', 'duration-300', 'hover:-translate-y-1', 'hover:shadow-xl');
+                    card.innerHTML = `
+                        ${containerId === 'new-arrivals' ? '' : ''}
+                        <img src="${product.image}" class="w-full h-48 object-cover" alt="${product.name}">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
+                            <p class="text-red-500 font-bold">$${price.toFixed(2)}</p>
+                            <button class="add-to-cart mt-3 w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition-colors" data-name="${product.name}" data-price="${price}" data-image="${product.image}">Add to Cart</button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+            // Attach event listeners to buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const name = button.getAttribute('data-name');
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    const image = button.getAttribute('data-image');
+                    addToCart(name, price, image);
+                });
+            });
+        }
+
+        function loadProducts() {
+            const allProducts = JSON.parse(localStorage.getItem('products')) || [];
+            const newArrivals = JSON.parse(localStorage.getItem('new-arrivals')) || [];
+            renderProducts('products', allProducts);
+            renderProducts('new-arrivals', newArrivals);
+        }
+
+        // Initial load
+        loadProducts();
+
+        // Re-render on page show or load
+        window.addEventListener('load', loadProducts);
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                loadProducts();
+            }
+        });
+
+        // Cart Functions
+        function addToCart(itemName, price, imageUrl) {
+            const existingItem = cart.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name: itemName, price: price, image: imageUrl, quantity: 1 });
+            }
+            updateCart();
+            alert(`${itemName} added to cart!`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+            renderCart();
+        }
+
+        function updateQuantity(index, newQuantity) {
+            if (newQuantity <= 0) {
+                removeFromCart(index);
+            } else {
+                cart[index].quantity = newQuantity;
+                updateCart();
+                renderCart();
+            }
+        }
+
+        function updateCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-center text-gray-500">Your cart is empty</p>';
+                document.getElementById('checkout-btn').disabled = true;
+            } else {
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    cartItems.innerHTML += `
+                        <div class="flex items-center border-b py-4">
+                            <img src="${item.image}" class="w-24 h-24 object-cover rounded mr-4">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold">${item.name}</h3>
+                                <p class="text-red-500">$${item.price.toFixed(2)}</p>
+                                <div class="flex items-center mt-2">
+                                    <button onclick="updateQuantity(${index}, ${item.quantity - 1})" class="px-2 py-1 bg-gray-200 rounded">-</button>
+                                    <span class="mx-2">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, ${item.quantity + 1})" class="px-2 py-1 bg-gray-200 rounded">+</button>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold">$${itemTotal.toFixed(2)}</p>
+                                <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 mt-2">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                document.getElementById('checkout-btn').disabled = false;
+            }
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+        }
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            alert('Checkout functionality to be implemented');
+        });
+
+        updateCart();
+    </script>
+</body>
+</html>
